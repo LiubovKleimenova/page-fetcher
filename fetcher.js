@@ -6,7 +6,7 @@ let URL = process.argv[2];
 let PATH = process.argv[3];
 //console.log(PATH);
 const fetcher = function (url, path) {
-  request(url, body => {
+  request(url, (error, statusBode, body) => {
       //console.log(body);
      fs.writeFile(path, body, function(err) {
       if (err) throw err;
